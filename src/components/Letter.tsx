@@ -1,6 +1,6 @@
-// import { useState } from "react";
 import { useState } from "react";
-import { Positions, useLetters } from "../modules/letters/hooks/useLetters";
+import { useWordList } from "../modules/wordList/wordListContext";
+import { Positions } from "../modules/wordList/wordListTypes";
 
 interface Props {
     letter: string;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function Letter({letter, position}: Props) {
-  const {greenLetter, yellowLetter, eliminateLetter } = useLetters();
+  const {greenLetter, yellowLetter, eliminateLetter } = useWordList();
   const [showWindow, setShowWindow] = useState(false);
 
   return (

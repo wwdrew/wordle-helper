@@ -1,4 +1,5 @@
-import { GreenColumnState, Positions, useLetters } from '../modules/letters/hooks/useLetters';
+import { useWordList } from '../modules/wordList/wordListContext';
+import { GreenColumnState, Positions } from '../modules/wordList/wordListTypes';
 import {Letter} from './Letter';
 
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -8,7 +9,7 @@ interface Props {
 }
 
 export function LetterSelector({position}: Props) {
-  const { state } = useLetters();
+  const { state } = useWordList();
   const { eliminated, positions } = state;
   const { state: columnState, exceptions } = positions[position];
 

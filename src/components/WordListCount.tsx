@@ -1,5 +1,4 @@
-import React from 'react';
-import { useWordList } from '../modules/words/context/wordsProvider';
+import { useWordList } from "../modules/wordList/wordListContext";
 
 export function WordListCount() {
   const { state } = useWordList();
@@ -7,6 +6,6 @@ export function WordListCount() {
   console.log({state});
 
   return (
-    <p>Possible words: {state.length}</p>
+    <p>Possible words: {state.wordList.length}</p>
   )
 }
