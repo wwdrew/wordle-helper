@@ -41,13 +41,11 @@ function wordListReducer(state: WordListState, action: WordListAction): WordList
   switch(action.type) {
 
     case 'GREEN_LETTER': {
-      const position = Number(action.payload.position) - 1;
-      return state.filter(word => word[position] === action.payload.letter.toLocaleLowerCase());
+      return state.filter(word => word[action.payload.position] === action.payload.letter.toLocaleLowerCase());
 
     }
     case 'YELLOW_LETTER': {
-      const position = Number(action.payload.position) - 1;
-      return state.filter(word => word[position] !== action.payload.letter.toLocaleLowerCase());
+      return state.filter(word => word[action.payload.position] !== action.payload.letter.toLocaleLowerCase());
     }
 
     case 'ELIMINATE_LETTER': {

@@ -16,11 +16,11 @@ function App() {
 
     <WordListCount />
     <div className="App">
-      <LetterSelector position="1"/>
-      <LetterSelector position='2'/>
-      <LetterSelector position="3"/>
-      <LetterSelector position="4"/>
-      <LetterSelector position="5"/>
+      <LetterSelector position={0}/>
+      <LetterSelector position={1}/>
+      <LetterSelector position={2}/>
+      <LetterSelector position={3}/>
+      <LetterSelector position={4}/>
     </div>
     </LettersContext.Provider>
     </WordListProvider>

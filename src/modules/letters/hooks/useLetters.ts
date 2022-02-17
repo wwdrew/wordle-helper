@@ -10,22 +10,22 @@ export type LettersContextValues = {
 
 export interface LettersState  {
   positions: {
+    0: ColumnState,
     1: ColumnState,
     2: ColumnState,
     3: ColumnState,
     4: ColumnState,
-    5: ColumnState,
   },
   eliminated: string[]
 }
 
 export const initialState: LettersState = {
   positions: {
+    0: { state: 'unknown', exceptions: [] },
     1: { state: 'unknown', exceptions: [] },
     2: { state: 'unknown', exceptions: [] },
     3: { state: 'unknown', exceptions: [] },
     4: { state: 'unknown', exceptions: [] },
-    5: { state: 'unknown', exceptions: [] },
   },
   eliminated: []
 }
@@ -51,7 +51,7 @@ type UnknownColumnState = {
 type ColumnState = YellowColumnState | GreenColumnState | UnknownColumnState;
 
 
-export type Positions = '1' | '2' | '3' | '4' | '5'
+export type Positions = 0 | 1 | 2 | 3 | 4
 
 type GreenLetterAction = {
   type: 'GREEN_LETTER'
