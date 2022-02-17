@@ -10,11 +10,7 @@ export type LettersContextValues = {
 
 export interface LettersState  {
   positions: {
-    0: ColumnState,
-    1: ColumnState,
-    2: ColumnState,
-    3: ColumnState,
-    4: ColumnState,
+    [key in Positions]: ColumnState
   },
   eliminated: string[]
 }
