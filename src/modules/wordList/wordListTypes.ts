@@ -1,7 +1,7 @@
 
 export type Positions = 0 | 1 | 2 | 3 | 4
 
-export type GreenColumnState = {
+type GreenColumnState = {
   state: 'green'
   letter: string
   exceptions: string[]
