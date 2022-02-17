@@ -1,6 +1,7 @@
 import { useContext } from "react";
 
 import { createContext } from 'react';
+import { useWordList } from "../../words/context/wordsProvider";
 
 export type LettersContextValues = {
   state: LettersState,
@@ -123,19 +124,28 @@ interface UseLettersHook extends LettersContextValues {
 
 export function useLetters(): UseLettersHook {
   const {state, dispatch} = useContext(LettersContext);
+  const { dispatch: wordListDispatch } = useWordList();
 
-  // console.log({state, dispatch})
   function eliminateLetter(letter: string) {
-    console.log("eliminate letter", {letter})
     dispatch({
+      type: 'ELIMINATE_LETTER',
+      payload: letter
+    })
+    wordListDispatch({
       type: 'ELIMINATE_LETTER',
       payload: letter
     })
   }
 
   function greenLetter(letter: string, position: Positions) {
-    console.log("green letter", {letter, position})
     dispatch({
+      type: 'GREEN_LETTER',
+      payload: {
+        position,
+        letter
+      }
+    })
+    wordListDispatch({
       type: 'GREEN_LETTER',
       payload: {
         position,
@@ -145,8 +155,14 @@ export function useLetters(): UseLettersHook {
   }
 
   function yellowLetter(letter: string, position: Positions) {
-    console.log("yellow letter", {letter, position})
     dispatch({
+      type: 'YELLOW_LETTER',
+      payload: {
+        position,
+        letter
+      }
+    })
+    wordListDispatch({
       type: 'YELLOW_LETTER',
       payload: {
         position,

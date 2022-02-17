@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { GreenColumnState, LettersContext, Positions, useLetters } from '../modules/letters/hooks/useLetters';
+import { GreenColumnState, Positions, useLetters } from '../modules/letters/hooks/useLetters';
 import {Letter} from './Letter';
 
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
