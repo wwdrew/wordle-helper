@@ -16,9 +16,9 @@ export function Letter({letter, position}: Props) {
     {letter}
     {showWindow ? (
       <div>
-        <span className="letter eliminate-letter-action" onClick={() => eliminateLetter(letter)}>{letter}</span>
-        <span className="letter yellow-letter-action" onClick={() => yellowLetter(letter, position)}>{letter}</span>
-        <span className="letter green-letter-action" onClick={() => greenLetter(letter, position)}>{letter}</span>
+        <span className="letter letter-action eliminate-letter-action" onClick={() => eliminateLetter(letter)}>{letter}</span>
+        <span className="letter letter-action yellow-letter-action" onClick={() => yellowLetter(letter, position)}>{letter}</span>
+        <span className="letter letter-action green-letter-action" onClick={() => greenLetter(letter, position)}>{letter}</span>
       </div>
     ) : null}
     </li>

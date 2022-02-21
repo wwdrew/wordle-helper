@@ -5,12 +5,22 @@
   justify-content: center;
 }
 
-.position-letter {
+.position-unknown {
   border: 1px solid grey;
-  width: 1rem;
-  padding: 1rem;
-  margin: 1rem;
-  height: 1rem;
+}
+
+.position-letter {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  line-height: 2rem;
+  width: 62px;
+  height: 62px;
 }
 
 .letter-selector {
@@ -20,12 +30,20 @@
 }
 
 .position-green {
-  background: green;
+  background: #538d4e;
   color: white;
 }
 
 .letter {
-  padding: 0.5rem;
+  padding: 0.3rem;
+  font-weight: bold;
+  border: 1px solid grey;
+  text-transform: uppercase;
+}
+
+.letter-action {
+  color: white;
+  cursor: pointer;
 }
 
 .eliminate-letter-action {
@@ -33,9 +51,9 @@
 }
 
 .yellow-letter-action {
-  background: yellow;
+  background: #c9b458;
 }
 
 .green-letter-action {
-  background: green;
+  background: #538d4e;
 }

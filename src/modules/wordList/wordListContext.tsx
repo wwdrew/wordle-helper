@@ -41,7 +41,7 @@ function wordListReducer(state: WordListState, action: WordListAction): WordList
             letter: action.payload.letter
           }
         },
-        wordList: state.wordList.filter(word => word[action.payload.position] === action.payload.letter.toLocaleLowerCase())
+        wordList: state.wordList.filter(word => word[action.payload.position] === action.payload.letter)
       }
 
     }
@@ -55,7 +55,7 @@ function wordListReducer(state: WordListState, action: WordListAction): WordList
             exceptions: [...state.positions[action.payload.position].exceptions, action.payload.letter]
           }
         },
-        wordList: state.wordList.filter(word => word[action.payload.position] !== action.payload.letter.toLocaleLowerCase())
+        wordList: state.wordList.filter(word => word[action.payload.position] !== action.payload.letter)
       }
     }
 
@@ -63,7 +63,7 @@ function wordListReducer(state: WordListState, action: WordListAction): WordList
       return {
         ...state,
         eliminated: [...state.eliminated, action.payload],
-        wordList: state.wordList.filter(word => !word.split('').includes(action.payload.toLocaleLowerCase()))
+        wordList: state.wordList.filter(word => !word.split('').includes(action.payload))
       }
     }
 
